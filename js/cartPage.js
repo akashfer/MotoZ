@@ -41,7 +41,7 @@ function renderCartPage() {
   });
 
   const totals = cartTotals(cart);
-  const deliveryCharge = 400;
+  const deliveryCharge = 450;
   summary.innerHTML = `
     <div><strong>Total Items:</strong> ${totals.totalItems}</div>
     <div><strong>Subtotal:</strong> ${formatPrice(totals.totalPrice)}</div>
