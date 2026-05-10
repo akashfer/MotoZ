@@ -1,5 +1,5 @@
 const WHATSAPP_PHONES = ["94764474693", "94751501176"];
-const DELIVERY_CHARGE = 400;
+const DELIVERY_CHARGE = 450;
 
 function buildWhatsappMessage(cart, customer) {
   const totals = cartTotals(cart);
