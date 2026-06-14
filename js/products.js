@@ -4,6 +4,28 @@
 window.PRODUCTS = [];
 window.PRODUCTS_READY = null;
 
+function getThumbnailUrl(src) {
+  if (!src) return src;
+
+  const driveMatch = src.match(/(?:\/file\/d\/|id=)([a-zA-Z0-9_-]+)/);
+  if (driveMatch) {
+    return `https://drive.google.com/thumbnail?id=${driveMatch[1]}&sz=w400`;
+  }
+
+  return src;
+}
+
+function getFullImageUrl(src) {
+  if (!src) return src;
+
+  const driveMatch = src.match(/(?:\/file\/d\/|id=)([a-zA-Z0-9_-]+)/);
+  if (driveMatch) {
+    return `https://drive.google.com/uc?export=view&id=${driveMatch[1]}`;
+  }
+
+  return src;
+}
+
 function parseCSV(csv) {
   const lines = csv.trim().split(/\r?\n/);
   const headers = lines[0].split(",").map((h) => h.trim());

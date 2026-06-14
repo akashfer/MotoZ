@@ -17,7 +17,7 @@ function renderProducts(container, products) {
     const stockClass = product.in_stock ? "in" : "out";
 
     card.innerHTML = `
-      <img class="zoomable" data-lightbox="true" data-fullsrc="${product.images[0]}" src="${product.images[0]}" alt="${product.name}">
+      <img class="zoomable" data-lightbox="true" data-fullsrc="${getFullImageUrl(product.images[0])}" src="${getThumbnailUrl(product.images[0])}" alt="${product.name}" loading="lazy" decoding="async">
       <h3>${product.name}</h3>
       <div class="price">${formatPrice(product.price)}</div>
       <span class="stock-badge ${stockClass}">${stockLabel}</span>
